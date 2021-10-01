@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(35, 80, 80);
+  color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.coin-app {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 50px;
+  color: #fff;
+}
+
+.coin-search {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.coin-title {
+  margin-bottom: 30px;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.coin-input {
+  text-align: center;
+  padding-left: 16px;
+  width: 300px;
+  height: 50px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  background-image: linear-gradient(
+    -250deg,
+    #3CB371 0%,
+    #2E8B57 50%,
+    #006400 100%
+  );
+  color: #fff;
+}
+
+.coin-input::placeholder {
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.450);
+}
+
+.coin-balance {
+  width: 300px;
+  padding: 13px;
+  text-align: center;
+  border-radius: 5px;
+  text-transform: uppercase;
+  background-color: rgb(226, 73, 73);
+  color: #fff;
+  text-decoration: none;
 }
