@@ -3,6 +3,7 @@ import axios from 'axios';
 import { CSVLink } from 'react-csv';
 import {useState, useEffect} from 'react';
 import Coin from './components/coin/Coin.js';
+import SearchWallet from './components/search-wallet/Search-wallet';
 
 function App() {
   
@@ -42,6 +43,7 @@ function App() {
           data={coins} 
           filename="testwork-kozlov-a.csv">
         Скачать CSV</CSVLink>
+        <SearchWallet />
       </div>
       {filterCoins.map(coin => {
         return (

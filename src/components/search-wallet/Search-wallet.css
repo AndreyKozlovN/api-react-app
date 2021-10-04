@@ -1,0 +1,33 @@
+.search-wallet {
+    text-align: center;
+    width:  300px;
+    margin-top: 30px;
+    display: flex;
+}
+
+.input-search-wallet {
+    text-align: center;
+    margin-right: 10px;
+    border-radius: 5px;
+    background-image: linear-gradient(
+        -250deg,
+        #3CB371 0%,
+        #2E8B57 50%,
+        #006400 100%
+      );
+      color: #fff;
+}
+
+.input-search-wallet::placeholder {
+    color: rgba(255, 255, 255, 0.450);
+  }
+
+.btn-search-wallet {
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    border-radius: 5px;
+    text-transform: uppercase;
+    background-color: rgb(226, 73, 73);
+    color: #fff;
+}
