@@ -23,9 +23,14 @@ class SearchWallet extends Component {
             const { wallet, history } = this.state;
 
             async function balance () {
-                const response = await axios.get('https://chain.api.btc.com/v3/address/' + wallet)
-                alert('Баланс на текущий момент ' + response.data.data.balance + ' $')
-                history.push(response.data.data)
+                if (wallet.length <= 20 || wallet.length >= 40 || wallet === '') alert('Ошибка. Проверьте адрес кошелька')
+                try {
+                    const response = await axios.get('https://chain.api.btc.com/v3/address/' + wallet)
+                    alert('Баланс на текущий момент ' + response.data.data.balance + ' $')
+                    history.push(response.data.data)
+                } catch {
+                    console.error('Произошла ошибка, проверьте правильность ввода');
+                }
             }
 
             return (
