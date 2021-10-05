@@ -1,12 +1,15 @@
 import './Search-wallet.css';
 import axios from 'axios';
 import { Component } from 'react';
+import { CSVLink } from 'react-csv';
+
 
 class SearchWallet extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            wallet: ''
+            wallet: '',
+            history: []
         };
     }
 
@@ -16,16 +19,14 @@ class SearchWallet extends Component {
         })
     }
 
-    balance = () => {
-        axios
-        .get('https://chain.api.btc.com/v3/address/' + this.state.wallet)
-        .then(result => result.data)
-        .then(result => alert(result.data.balance))
-        .catch(err => console.log(err))
-    }
-
         render () {
-            const { wallet } = this.state;
+            const { wallet, history } = this.state;
+
+            async function balance () {
+                const response = await axios.get('https://chain.api.btc.com/v3/address/' + wallet)
+                alert('Баланс на текущий момент ' + response.data.data.balance + ' $')
+                history.push(response.data.data)
+            }
 
             return (
                 <div className="search-wallet">
@@ -36,7 +37,14 @@ class SearchWallet extends Component {
                         onChange={this.onValueChange} 
                         name="wallet"
                         value={wallet}/>
-                    <button className="btn-search-wallet" onClick={this.balance}>Узнать Баланс</button>
+                    <button className="btn-search-wallet" onClick={balance}>Узнать Баланс</button>
+                   <div className="history-download-search-wallet">
+                        <CSVLink 
+                            className="history-wallet" 
+                            data={history}
+                            filename="testwork-kozlov-a-historyWallet.csv">
+                        Загрузить историю</CSVLink>
+                   </div>
                 </div>
         )
     }

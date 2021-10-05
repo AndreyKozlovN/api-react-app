@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="coin-app">
       <div className="coin-search">
-        <h1 className="coin-title">API Crypto</h1>
+        <h1 className="coin-title">Evercode LAB</h1>
         <form>
           <input 
             type="text" 
@@ -42,7 +42,7 @@ function App() {
           className="coin-balance" 
           data={coins} 
           filename="testwork-kozlov-a.csv">
-        Скачать CSV</CSVLink>
+        Загрузить список всех монет</CSVLink>
         <SearchWallet />
       </div>
       {filterCoins.map(coin => {
